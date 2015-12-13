@@ -16,12 +16,12 @@ AppleScript 编写的 Finder 扩展
 tell application "Finder"
 	set sel to (get selection)
 	if not sel = {} then --有文件/夹被选中
-		repeat with f in (get selection)
+		repeat with f in sel
 			set _cwd to POSIX path of (f as alias)
 			if _cwd does not end with "/" then --不以/结束的是文件，则取这个文件所在的目录
 				set _cwd to POSIX path of ((folder of f) as alias)
 			end if
-			exit repeat -- 只用第一个
+			exit repeat --只用第一个
 		end repeat
 	else --没有选中文件/夹，使用当前目录
 		set _cwd to POSIX path of ((folder of (front window)) as alias)
