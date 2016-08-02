@@ -59,7 +59,14 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>/usr/local/bin/mvim -d -R "$@"
+					<string>date &gt;&gt; /tmp/ttt2/xattr-c
+echo "$@" &gt;&gt; /tmp/ttt2/xattr-c
+#xattr -r -c "$@"
+
+for i in "$@"; do
+  echo "$i"
+  xattr -r -c "$i"
+done 2&gt; /dev/null
 </string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
@@ -85,7 +92,7 @@
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>E9230F93-BDA5-4354-917C-8E54B59E59AA</string>
+				<string>2DD258CD-F168-445A-B78D-389E9A8AE4C0</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
@@ -95,9 +102,9 @@
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>065DDDE3-432D-4AF3-8210-F54173AFFACC</string>
+				<string>CCBE2EEA-3444-49BA-BCFA-E3B1D06EDDE3</string>
 				<key>UUID</key>
-				<string>A048B31C-B41E-4D64-83C1-BAC9D1E2764C</string>
+				<string>B5CEE495-458F-448E-81B2-EA00560517D6</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
